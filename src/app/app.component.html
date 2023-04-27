@@ -1,0 +1,20 @@
+<mat-drawer-container class="example-container">
+  <mat-toolbar style="background-color: #2f374e;color:#e9ecef;padding:15px;">
+    <span>INFERCON</span>
+    <div class="spacer"></div>
+    
+    <a mat-button routerLink="home">Home </a>
+    <a mat-button  routerLink="manage-lead">Manage Leads</a>
+    <a mat-button routerLink="reports">Reports</a>
+    <a mat-button routerLink="create-lead">Create Lead</a>
+    <a mat-button routerLink="profile">profile</a>
+    </mat-toolbar>
+    <!-- <mat-toolbar-row style="padding: 0 calc(1.25rem / 2);
+    box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);text-align:center;width:60%;">
+      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    </mat-toolbar-row> -->
+    <div class="container router_outlet">
+      <router-outlet></router-outlet>
+    </div>
+ 
+</mat-drawer-container>

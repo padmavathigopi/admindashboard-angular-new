@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="list-container">
+      <h2>Follow Up</h2>
+      <div class="list" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="listOneItems">
+        <div class="list-item-followup" *ngFor="let item of listOneItems" cdkDrag>
+            <ul><li>{{ item.name }}
+            </li>
+            <li>{{ item.status }}</li>
+            <li>{{item.marketer_name}}</li>
+            <li>{{item.service_type}}</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <h2>Finalized</h2>
+      <div class="list" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="listTwoItems">
+        <div class="list-item-finalized" *ngFor="let item of listTwoItems" cdkDrag>  <ul><li>{{ item.name }}
+        </li>
+        <li>{{ item.status }}</li>
+        <li>{{item.marketer_name}}</li>
+        <li>{{item.service_type}}</li>
+    </ul></div>
+      </div>
+    </div>
+  </div>

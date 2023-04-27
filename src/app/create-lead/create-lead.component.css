@@ -1,0 +1,33 @@
+.example-form {
+   
+    width:80%;
+  }
+  
+  .example-full-width {
+    width: 40%;
+    margin-left:60px;
+  }
+  form{
+    width:100%;
+  }
+  .subbtn{
+   
+    padding:20px;
+   
+    float:left;
+    margin:5px;
+  }
+  .clrbtn{
+    padding:20px;
+   
+    margin:5px;
+  }
+  mat-form-field {
+    width:80%;
+    
+  }
+  .updwidth{
+    margin-left:135px;
+  }
+
+ 

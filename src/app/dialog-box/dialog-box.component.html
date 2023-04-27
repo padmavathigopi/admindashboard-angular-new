@@ -1,0 +1,110 @@
+<h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
+<div mat-dialog-content style="padding: 24px 13px 20px 24px !important;">
+  <ng-container *ngIf="action !== 'Add'; else elseTemplate">
+    <mat-form-field style="padding:4px">
+      <mat-label>title name:</mat-label>
+      <input  matInput [(ngModel)]="local_data.title">
+    </mat-form-field>
+    
+    <mat-form-field style="padding:4px">
+      <mat-label>description:</mat-label>
+      <input  matInput [(ngModel)]="local_data.description">
+    </mat-form-field>
+  
+    <mat-form-field style="padding:4px">
+      <mat-label>author name:</mat-label>
+      <input matInput [(ngModel)]="local_data.author">
+    </mat-form-field>
+  
+    <mat-form-field style="padding:4px">
+      <mat-label>status:</mat-label>
+      <input  matInput [(ngModel)]="local_data.publish">
+    </mat-form-field>
+  </ng-container>
+
+
+
+
+
+  <ng-template #elseTemplate>
+    <mat-form-field style="padding:4px">
+      <mat-label> name:</mat-label>
+      <input  matInput [(ngModel)]="admind.name" [ngModelOptions]="{standalone: true}" name="name" id="name">
+    </mat-form-field>
+    
+    <mat-form-field style="padding:4px">
+      <mat-label>course:</mat-label>
+      <input  matInput [(ngModel)]="admind.course" [ngModelOptions]="{standalone: true}" name="course" id="course">
+    </mat-form-field>
+  
+    <mat-form-field style="padding:4px">
+      <mat-label>status:</mat-label>
+      <input  matInput [(ngModel)]="admind.status" [ngModelOptions]="{standalone: true}" name="status" id="status">
+    </mat-form-field>
+  
+    <mat-form-field style="padding:4px">
+      <mat-label>marketer name:</mat-label>
+      <input matInput [(ngModel)]="admind.marketer_name" [ngModelOptions]="{standalone: true}" name="marketer_name" id="marketer_name">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>service type:</mat-label>
+      <input  matInput [(ngModel)]="admind.service_type" [ngModelOptions]="{standalone: true}" name="service_type" id="service_type" >
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>email:</mat-label>
+      <input  matInput [(ngModel)]="admind.email" [ngModelOptions]="{standalone: true}" name="email" id="email">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>contact</mat-label>
+      <input  matInput [(ngModel)]="admind.contact_no" [ngModelOptions]="{standalone: true}" name="contact_no" id="contact_no">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>qualification:</mat-label>
+      <input  matInput [(ngModel)]="admind.qualification" [ngModelOptions]="{standalone: true}" name="qualification" id="qualification">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>working status:</mat-label>
+      <input  matInput [(ngModel)]="admind.working_sts" [ngModelOptions]="{standalone: true}" name="working_sts" id="working_sts" >
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>source:</mat-label>
+      <input  matInput [(ngModel)]="admind.source" [ngModelOptions]="{standalone: true}" name="source" id="source">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>address:</mat-label>
+      <input  matInput [(ngModel)]="admind.address" [ngModelOptions]="{standalone: true}" name="address" id="address">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>required services:</mat-label>
+      <input  matInput [(ngModel)]="admind.required_services" [ngModelOptions]="{standalone: true}" name="required_services" id="required_services">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>joining Date:</mat-label>
+      <input  matInput [(ngModel)]="admind.joining_date" [ngModelOptions]="{standalone: true}" name="joining_date" id="joining_date">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>color value:</mat-label>
+      <input  matInput [(ngModel)]="admind.color_val" [ngModelOptions]="{standalone: true}" name="color_val" id="color_val">
+    </mat-form-field>
+    <mat-form-field style="padding:4px">
+      <mat-label>followup date:</mat-label>
+      <input  matInput [(ngModel)]="admind.followup_date" [ngModelOptions]="{standalone: true}" name="followup_date" id="followup_date">
+    </mat-form-field>
+  </ng-template>
+</div>
+
+<div mat-dialog-actions style="justify-content: flex-end;" *ngIf="action !== 'Add'; else elseButton">
+  <button mat-button (click)="updateData(local_data.id,local_data)" [mat-dialog-close]="true">
+    <span>Update</span>
+  </button>
+  <button mat-button mat-flat-button color="warn" [mat-dialog-close]="false">Cancel</button>
+</div>
+
+<ng-template #elseButton>
+  <div mat-dialog-actions style="justify-content: flex-end;">
+    <button mat-button (click)="addData()" [mat-dialog-close]="true">
+      <span>ADD</span>
+    </button>
+    <button mat-button mat-flat-button color="warn" [mat-dialog-close]="false">Cancel</button>
+  </div>
+</ng-template>

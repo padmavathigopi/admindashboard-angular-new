@@ -1,0 +1,61 @@
+
+
+<div class="container-fluid">
+<h2>Create a Lead</h2>
+<p>Please click below mention services of your interest to receive quotation for the same:</p>
+
+<form class="example-form">
+    
+  
+    
+ <div *ngIf="!submitted">
+    <div class="row">
+      <div class="col-lg-6">
+          <mat-form-field >
+          <mat-label>title name:</mat-label>
+          <input matInput  [(ngModel)]="testtable.title" [ngModelOptions]="{standalone: true}" name="title" id="title">
+        </mat-form-field>
+
+      </div>
+     <div class="col-lg-6">
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <input matInput [(ngModel)]="testtable.description" [ngModelOptions]="{standalone: true}" name="description" id="description">
+        </mat-form-field>
+     </div>
+     <div class="col-lg-6"> 
+        <mat-form-field >
+            <mat-label>Author</mat-label>
+            <input matInput id="author" [(ngModel)]="testtable.author" [ngModelOptions]="{standalone: true}"  name="author">
+          </mat-form-field> 
+     </div>
+  
+    <div class="col-lg-6">
+        <mat-form-field >
+          <mat-label>Status</mat-label>
+          <input matInput   id="publish" [(ngModel)]="testtable.publish" [ngModelOptions]="{standalone: true}" name="publish">
+        </mat-form-field>
+    </div>
+     
+    </div>
+  <div class="col-lg-6">
+    <button mat-raised-button type="submit" action="submit" class="subbtn" (click)="savetestingtable()">SUBMIT</button>
+
+  </div>
+  <div class="col-lg-6">
+    <button mat-raised-button class="clrbtn">CLEAR</button>
+  </div>
+   
+
+ 
+  
+ 
+  
+</div>  
+       
+   
+    
+  
+</form>
+
+</div>

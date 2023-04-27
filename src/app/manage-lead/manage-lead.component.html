@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="container">
+    <mat-form-field>
+      <input matInput   (keyup)="fireFilterEvent($event)" placeholder="Search">
+    </mat-form-field>
+    <button mat-raised-button  class="add-button" (click)="openAddmodel('Add')">
+      Add data
+    </button>
+  </div>
+  <table mat-table  [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+  
+  
+   
+  
+  <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns"> 
+      <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+      <td mat-cell class="td" *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+  
+  
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell class="td" *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="col-lg-6">
+          <div class="example-element-color_val"> <b>Color Value :</b>{{element.color_val}} </div>
+          <div class="example-element-email"> {{element.email}} </div>
+          <div class="example-element-address"> {{element.address}} </div>
+          
+        </div>
+        <div class="col-lg-6">
+          <div class="example-element-required_services">{{element.required_services}}</div>
+          <div class="example-element-contact_no"> {{element.contact_no}} </div>
+        </div>
+        
+      </div>
+    </td>
+  </ng-container>
+  
+  
+  
+  
+  
+  <tr mat-header-row class="tr" *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row class="tr" *matRowDef="let element; columns: displayedColumns;"
+  
+  [class.example-expanded-row]="expandedElement === element"
+  (click)="expandedElement = (expandedElement === element) ? null : element">
+  </tr>
+  
+    <tr mat-row class="tr" *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  
+  
+    <!-- <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of admindata elements">
+  </mat-paginator>
+  
+  </div>
+  
+  
